@@ -1,0 +1,4 @@
+"use client";
+import { useEffect } from "react";
+import { t,useLanguage } from "./i18n";
+export function Pagination({page,total,onChange}:{page:number;total:number;onChange:(page:number)=>void}){const{lang}=useLanguage();useEffect(()=>{if(page>total)onChange(total);},[page,total,onChange]);if(total<=1)return null;const go=(next:number)=>{onChange(next);document.getElementById("festival-results")?.scrollIntoView({behavior:"smooth",block:"start"});};return <nav className="pagination" aria-label={t(lang,"Festival pages","お祭りのページ")}><button className="button alt" disabled={page===1} onClick={()=>go(page-1)}>{t(lang,"← Previous","← 前へ")}</button>{Array.from({length:total},(_,i)=><button key={i} className="button alt" aria-current={page===i+1?"page":undefined} onClick={()=>go(i+1)}>{i+1}</button>)}<button className="button alt" disabled={page===total} onClick={()=>go(page+1)}>{t(lang,"Next →","次へ →")}</button></nav>}

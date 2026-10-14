@@ -1,1 +1,3 @@
-"use client";import Link from "next/link";import { seedFestivals } from "@/lib/festivals";import { isPast } from "@/lib/utils";import { FestivalCard } from "@/components/festival-card";import { t,useLanguage } from "@/components/i18n";export default function Page(){const {lang}=useLanguage();const all=seedFestivals.filter(x=>isPast(x));return <main className="wrap section"><Link href="/" className="muted">← {t(lang,"Back to upcoming festivals","これからのお祭りへ戻る")}</Link><h1>{t(lang,"Past Festivals Archive","過去のお祭りアーカイブ")}</h1><p className="muted">{all.length} {t(lang,"past festivals in our database.","件の過去のお祭りがあります。")}</p><div className="grid">{all.map(x=><FestivalCard key={x.id} festival={x} ended/>)}</div></main>}
+import { Suspense } from "react";
+import { PastArchive } from "@/components/past-archive";
+export default function Page(){return <Suspense fallback={<main className="wrap section">Loading festivals…</main>}><PastArchive/></Suspense>}
