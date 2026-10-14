@@ -1,1 +1,1 @@
-import Link from "next/link";export default function NotFound(){return <main className="wrap section empty"><h1>Festival not found</h1><p>This festival may have ended or is no longer available.</p><Link className="button" href="/">Back to Festivals</Link></main>}
+import { StaticPage } from "@/components/static-page";export default function NotFound(){return <StaticPage page="notFound"/>}

@@ -24,4 +24,10 @@ describe("SubmissionForm Phase 2", () => {
     render(<SubmissionForm />);fireEvent.change(screen.getByLabelText(/official festival website/i),{target:{value:"https://example.com"}});fireEvent.click(screen.getByRole("button",{name:/autofill/i}));
     await waitFor(()=>expect(screen.getByRole("heading",{name:"Bon Odori"})).toBeInTheDocument()); expect(screen.queryByRole("heading",{name:"Invented"})).not.toBeInTheDocument();
   });
+  it("applies successful autofill fields and keeps them editable after a later failure", async () => {
+    const fetchMock=vi.fn().mockResolvedValueOnce({ok:true,json:async()=>({data:{nameEn:"Autofilled Festival",activities:[]}})}).mockResolvedValueOnce({ok:false});vi.stubGlobal("fetch",fetchMock);
+    render(<SubmissionForm />);const website=screen.getByLabelText(/official festival website/i);fireEvent.change(website,{target:{value:"https://example.com"}});fireEvent.click(screen.getByRole("button",{name:/autofill/i}));
+    await waitFor(()=>expect(screen.getByLabelText("nameEn")).toHaveValue("Autofilled Festival")); fireEvent.change(screen.getByLabelText("nameEn"),{target:{value:"Edited"}});fireEvent.click(screen.getByRole("button",{name:/autofill/i}));
+    await waitFor(()=>expect(screen.getByText(/could not extract/i)).toBeInTheDocument());expect(screen.getByLabelText("nameEn")).toHaveValue("Edited");
+  });
 });
