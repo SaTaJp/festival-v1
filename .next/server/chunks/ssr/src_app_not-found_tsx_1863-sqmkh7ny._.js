@@ -1,3 +1,0 @@
-module.exports=[3363,a=>{"use strict";var b=a.i(7997),c=a.i(95936);a.s(["default",0,function(){return(0,b.jsxs)("main",{className:"wrap section empty",children:[(0,b.jsx)("h1",{children:"Festival not found"}),(0,b.jsx)("p",{children:"This festival may have ended or is no longer available."}),(0,b.jsx)(c.default,{className:"button",href:"/",children:"Back to Festivals"})]})}])},17537,function(a){a.n(a.i(3363))}];
-
-//# sourceMappingURL=src_app_not-found_tsx_1863-sqmkh7ny._.js.map

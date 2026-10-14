@@ -1,6 +1,7 @@
 export const categories = ["culture", "food-drink", "traditional", "music", "seasonal", "fireworks", "local-community", "family"] as const;
 export type FestivalCategory = (typeof categories)[number];
 export const activities = ["Food Stalls", "Festival Games", "Bon Odori", "Mikoshi", "Workshop", "Taiko", "Traditional Performance", "Local Interaction", "Festival Preparation", "Other"] as const;
-export type FestivalActivity = (typeof activities)[number];
+export type ActivityType = (typeof activities)[number];
+export type FestivalActivity = { id:string; type:ActivityType; interactionType:"participate"|"view"; participationType?:"open"|"reservation"|"conditional"; reservationRequired?:boolean|null; reservationUrl?:string|null; price?:string|null; startTime?:string|null; endTime?:string|null; location?:string|null; conditions?:string|null; description?:string|null };
 export type Festival = { id:string; slug:string; nameJa:string; nameEn:string; category:FestivalCategory; startDate:string; endDate?:string; startTime?:string; endTime?:string; prefecture:string; city:string; venue?:string; address?:string; latitude?:number; longitude?:number; description:string; imageUrl?:string; activities:FestivalActivity[]; participationType?:string; reservationRequired?:boolean; reservationUrl?:string; price?:string; paymentMethods?:string[]; officialWebsite?:string; organizerName?:string; contactEmail?:string; ticketUrl?:string; rainPolicy?:string; notes?:string };
 export const categoryLabel = (c: FestivalCategory) => ({culture:"Culture","food-drink":"Food & Drink",traditional:"Traditional",music:"Music",seasonal:"Seasonal",fireworks:"Fireworks","local-community":"Local Community",family:"Family"}[c]);

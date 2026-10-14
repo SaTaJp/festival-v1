@@ -21,7 +21,7 @@ export async function GET() {
           "Content-Type": "application/json",
           "x-goog-api-key": apiKey,
         },
-        body: JSON.stringify({ model: "gemini-3.8-flash", input: prompt }),
+        body: JSON.stringify({ model: "gemini-3.5-flash-lite", input: prompt }),
         cache: "no-store",
       },
     );

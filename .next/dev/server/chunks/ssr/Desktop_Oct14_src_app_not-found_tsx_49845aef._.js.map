@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/tanakasatoshi/Desktop/Oct14/src/app/not-found.tsx"],"sourcesContent":["import Link from \"next/link\";export default function NotFound(){return <main className=\"wrap section empty\"><h1>Festival not found</h1><p>This festival may have ended or is no longer available.</p><Link className=\"button\" href=\"/\">Back to Festivals</Link></main>}\n"],"names":[],"mappings":";;;;;AAAA;;;AAA4C,SAAS;IAAW,qBAAO,kQAAC;QAAK,WAAU;;0BAAqB,kQAAC;0BAAG;;;;;;0BAAuB,kQAAC;0BAAE;;;;;;0BAA2D,kQAAC,8MAAI;gBAAC,WAAU;gBAAS,MAAK;0BAAI;;;;;;;;;;;;AAA+B","debugId":null}}]
-}
