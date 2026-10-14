@@ -1,0 +1,1 @@
+import { Newsletter } from "@/components/newsletter";export default function Page(){return <main className="wrap section"><h1>Never miss a festival</h1><p className="muted">Get festival recommendations and upcoming events in Japan.</p><Newsletter/></main>}

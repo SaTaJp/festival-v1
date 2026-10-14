@@ -1,0 +1,1 @@
+import { Suspense } from "react";import { Home } from "@/components/home";export default function Page(){return <Suspense fallback={<main className="wrap section">Loading festivals…</main>}><Home/></Suspense>}

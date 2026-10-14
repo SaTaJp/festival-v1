@@ -1,0 +1,30 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/27gjg8e11zukd.js"
+3:"/_next/static/chunks/18j2-j_g0as0b.js"
+4:I[22016,["$2","$3"],""]
+5:I[39756,["$2","$3"],"default"]
+6:I[37457,["$2","$3"],"default"]
+d:"/_next/static/chunks/16tswupqd842c.js"
+e:I[92104,["$2","$3","$d"],"SubmissionForm"]
+f:I[97367,["$2","$3"],"OutletBoundary"]
+10:"$Sreact.suspense"
+13:"ViewportBoundary"
+14:I[97367,["$2","$3"],"$13"]
+15:"MetadataBoundary"
+16:I[97367,["$2","$3"],"$15"]
+:HL["/_next/static/chunks/3-e3hmha12i5x.css","style"]
+8:X
+b:X
+b:C
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"className":"wrap section","children":[["$","h1",null,{"children":"List your festival"}],["$","p",null,{"className":"muted","children":"Share a welcoming festival experience with international visitors."}],["$","$Le",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/16tswupqd842c.js","async":true}]],["$","$Lf",null,{"children":["$","$10",null,{"name":"Next.MetadataOutlet","children":"$@11"}]}]]}],"p":"$@12","v":null,"s":"$8"}}]]
+9:[["children",{"s":"upload","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@a","v":"$b","s":"$8"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3-e3hmha12i5x.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/27gjg8e11zukd.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/18j2-j_g0as0b.js","async":true}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","header",null,{"className":"header","children":["$","div",null,{"className":"wrap nav","children":[["$","$L4",null,{"className":"logo","href":"/","children":["MATSURI ",["$","b",null,{"children":"GUIDE"}]]}],["$","nav",null,{"className":"navlinks","children":[["$","$L4",null,{"href":"/#near","children":"Festivals Near Me"}],["$","$L4",null,{"href":"/upload","children":"List Your Festival"}]]}]]}]}],["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}],"notFound":[["$","main",null,{"className":"wrap section empty","children":[["$","h1",null,{"children":"Festival not found"}],["$","p",null,{"children":"This festival may have ended or is no longer available."}],["$","$L4",null,{"className":"button","href":"/","children":"Back to Festivals"}]]}],[]]}],["$","footer",null,{"className":"footer","children":["$","div",null,{"className":"wrap footer-grid","children":[["$","div",null,{"children":[["$","div",null,{"className":"logo","children":["MATSURI ",["$","b",null,{"children":"GUIDE"}]]}],["$","p",null,{"children":"Find welcoming local festivals and real experiences across Japan."}]]}],["$","div",null,{"children":[["$","$L4",null,{"href":"/","children":"Browse Festivals"}],["$","$L4",null,{"href":"/past","children":"Past Festivals"}],["$","$L4",null,{"href":"/upload","children":"List Your Festival"}],["$","$L4",null,{"href":"/partner","children":"Partner Program"}]]}],["$","div",null,{"children":[["$","$L4",null,{"href":"/newsletter","children":"Newsletter"}],["$","$L4",null,{"href":"/about","children":"About & Contact"}],["$","$L4",null,{"href":"/privacy","children":"Privacy Policy"}]]}]]}]}]]}]}]]}],"p":"$@7","v":null,"s":"$8"},"c":"$Q9"},"h":{"r":["$","$1","h",{"children":[null,["$","$L14",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L16",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$10",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Matsuri Guide"}],["$","meta","1",{"name":"description","content":"Discover festivals and experiences across Japan."}]]}]}],null]}],null]}],"p":"$@17","v":null,"s":"$8"}},"a":"$@18","u":"$@19","b":"NtKWqqx3JYb7RJOxiHotI"}
+11:null
+8:300
+19:true
+8:C
+18:0
+a:"$undefined"
+7:"$undefined"
+17:"$undefined"
+12:"$undefined"

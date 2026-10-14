@@ -1,0 +1,1 @@
+import "./globals.css";import { Header,Footer } from "@/components/layout";import type { Metadata } from "next";export const metadata:Metadata={title:"Matsuri Guide",description:"Discover festivals and experiences across Japan."};export default function Layout({children}:{children:React.ReactNode}){return <html lang="en"><body><Header/>{children}<Footer/></body></html>}

@@ -1,0 +1,1 @@
+import { SubmissionForm } from "@/components/submission-form";export default function Page(){return <main className="wrap section"><h1>List your festival</h1><p className="muted">Share a welcoming festival experience with international visitors.</p><SubmissionForm/></main>}
