@@ -37,7 +37,23 @@ describe("localized seed festival data", () => {
     expect(new Set(seedFestivals.map(festival => festival.slug)).size).toBe(seedFestivals.length);
     expect(sapporo?.galleryImageUrls).not.toContain(sapporo?.imageUrl);
     expect([sapporo?.imageUrl, ...(sapporo?.galleryImageUrls || [])]).toHaveLength(8);
-    expect(sapporo?.activities).toHaveLength(3);
-    expect(sapporo?.activities.map(activity => activity.nameEn)).toEqual(["Snow and Ice Sculpture Viewing", "Hokkaido Food Stalls", "Stage Performances"]);
+    expect(sapporo?.activities).toHaveLength(4);
+    expect(sapporo?.activities.map(activity => activity.nameEn)).toEqual(["Snow and Ice Sculpture Viewing", "Hokkaido Food Stalls", "Stage Performances", "Mini Snow Sculpture Workshop"]);
+  });
+  it("includes the fictional, advance-registration snow sculpture workshop without changing existing activities", () => {
+    const sapporo = seedFestivals.find(festival => festival.id === "seed-sapporo-snow-festival");
+    const workshop = sapporo?.activities.find(activity => activity.id === "sapporo-mini-snow-sculpture-workshop");
+    expect(workshop).toMatchObject({ type: "Workshop", nameJa: "ミニ雪像づくりワークショップ", nameEn: "Mini Snow Sculpture Workshop", interactionType: "participate", participationType: "reservation", reservationRequired: true, reservationUrl: "https://example.com/demo/sapporo-snow-workshop", isDemoReservation: true, price: "JPY 1,500 (materials included)", startTime: "10:30", endTime: "12:00", locationJa: "大通公園・雪像制作体験エリア（デモ用の仮設定）", locationEn: "Odori Park, Snow Sculpture Workshop Area (fictional demo location)", imageUrl: "/media/festivals/sapporo-snow-festival-03.webp" });
+    expect(workshop?.descriptionJa).toContain("デモ用の架空プログラム"); expect(workshop?.descriptionEn).toContain("Fictional Demo Activity"); expect(workshop?.conditionsJa).toContain("10歳以上"); expect(workshop?.conditionsEn).toContain("at least 10 years old");
+    expect(sapporo?.activities.map(activity => activity.id)).toEqual(["sapporo-snow-sculpture-viewing", "sapporo-hokkaido-food-stalls", "sapporo-stage-performances", "sapporo-mini-snow-sculpture-workshop"]);
+  });
+  it("completes the existing Sapporo activities without changing their IDs or images", () => {
+    const activities = seedFestivals.find(festival => festival.id === "seed-sapporo-snow-festival")!.activities;
+    expect(activities.slice(0, 3)).toMatchObject([
+      {id:"sapporo-snow-sculpture-viewing",interactionType:"view",participationType:"open",reservationRequired:false,startTime:"10:00",endTime:"21:00",locationEn:"Odori Park, Snow Sculpture Exhibition Area (demo setting)",imageUrl:"/media/festivals/sapporo-snow-festival-08.webp"},
+      {id:"sapporo-hokkaido-food-stalls",interactionType:"participate",participationType:"open",reservationRequired:false,startTime:"11:00",endTime:"20:00",locationEn:"Odori Park, Food Stall Area (demo setting)",imageUrl:"/media/festivals/sapporo-snow-festival-02.webp"},
+      {id:"sapporo-stage-performances",interactionType:"view",participationType:"open",reservationRequired:false,startTime:"17:30",endTime:"19:00",locationEn:"Odori Park, Outdoor Stage Area (demo setting)",imageUrl:"/media/festivals/sapporo-snow-festival-04.webp"}
+    ]);
+    activities.slice(0,3).forEach(activity => { expect(activity.reservationUrl).toBeUndefined(); expect(activity.descriptionJa).toContain("デモ用の架空設定"); expect(activity.descriptionEn).toContain("Fictional Demo Information"); expect(activity.conditionsJa).toBeTruthy(); expect(activity.conditionsEn).toBeTruthy(); });
   });
 });
