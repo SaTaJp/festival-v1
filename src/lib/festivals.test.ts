@@ -16,4 +16,28 @@ describe("localized seed festival data", () => {
     expect(kyoto?.activities[0].descriptionJa).toBeTruthy();
     expect(filterFestivals(seedFestivals, { activities: "food-stalls,bon-odori" }).length).toBeGreaterThan(0);
   });
+  it("adds a unique Sapporo Snow Festival seed with an eight-image gallery", () => {
+    const sapporo = seedFestivals.find(festival => festival.id === "seed-sapporo-snow-festival");
+    expect(sapporo).toMatchObject({
+      slug: "sapporo-snow-festival",
+      nameJa: "さっぽろ雪まつり",
+      nameEn: "Sapporo Snow Festival",
+      imageUrl: "/media/festivals/sapporo-snow-festival-01.webp",
+      galleryImageUrls: [
+        "/media/festivals/sapporo-snow-festival-02.webp",
+        "/media/festivals/sapporo-snow-festival-03.webp",
+        "/media/festivals/sapporo-snow-festival-04.webp",
+        "/media/festivals/sapporo-snow-festival-05.webp",
+        "/media/festivals/sapporo-snow-festival-06.webp",
+        "/media/festivals/sapporo-snow-festival-07.webp",
+        "/media/festivals/sapporo-snow-festival-08.webp"
+      ]
+    });
+    expect(new Set(seedFestivals.map(festival => festival.id)).size).toBe(seedFestivals.length);
+    expect(new Set(seedFestivals.map(festival => festival.slug)).size).toBe(seedFestivals.length);
+    expect(sapporo?.galleryImageUrls).not.toContain(sapporo?.imageUrl);
+    expect([sapporo?.imageUrl, ...(sapporo?.galleryImageUrls || [])]).toHaveLength(8);
+    expect(sapporo?.activities).toHaveLength(3);
+    expect(sapporo?.activities.map(activity => activity.nameEn)).toEqual(["Snow and Ice Sculpture Viewing", "Hokkaido Food Stalls", "Stage Performances"]);
+  });
 });
